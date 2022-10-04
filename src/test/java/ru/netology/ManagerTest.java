@@ -1,21 +1,22 @@
 package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class ManagerTest {
     @Test
     public void shoulMovies() {
-     Manager manager = new Manager();
-     manager.addMovies("movie1");
-     manager.addMovies("movie2");
-     manager.addMovies("movie3");
-     manager.addMovies("movie4");
+        Manager manager = new Manager();
+        manager.addMovies("movie1");
+        manager.addMovies("movie2");
+        manager.addMovies("movie3");
+        manager.addMovies("movie4");
 
-     String[] actual = manager.findAll();
-     String[] expected = { "movie1", "movie2", "movie3","movie4"};
+        String[] actual = manager.findAll();
+        String[] expected = {"movie1", "movie2", "movie3", "movie4"};
 
-     assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -24,22 +25,24 @@ public class ManagerTest {
         manager.addMovies("movie1");
 
         String[] actual = manager.findAll();
-        String[] expected = { "movie1"};
+        String[] expected = {"movie1"};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shoulMovies3() {
         Manager manager = new Manager();
 
 
         String[] actual = manager.findAll();
-        String[] expected = { };
+        String[] expected = {};
 
         assertArrayEquals(expected, actual);
     }
 
 
-    @Test public void shouldLastMovies() {
+    @Test
+    public void shouldLastMovies() {
         Manager manager = new Manager(10);
         manager.addMovies("movie1");
         manager.addMovies("movie2");
@@ -71,11 +74,12 @@ public class ManagerTest {
                 "movie8",
                 "movie7",
 
-     };
+        };
         assertArrayEquals(expected, actual);
     }
 
-    @Test public void shouldLastMovies2() {
+    @Test
+    public void shouldLastMovies2() {
         Manager manager = new Manager(5);
         manager.addMovies("movie1");
         manager.addMovies("movie2");
@@ -106,7 +110,9 @@ public class ManagerTest {
         };
         assertArrayEquals(expected, actual);
     }
-    @Test public void shouldLastMovies3() {
+
+    @Test
+    public void shouldLastMovies3() {
         Manager manager = new Manager();
         manager.addMovies("movie1");
         manager.addMovies("movie2");
@@ -124,7 +130,6 @@ public class ManagerTest {
         };
         assertArrayEquals(expected, actual);
     }
-
 
 
 }
